@@ -1,0 +1,927 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar {
+  background: #0B1C1F;
+
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.nav-btn {
+  color: #020617;   /* dark slate */
+}
+
+.nav-btn.active {
+  border-bottom: 2px solid #166534; /* green accent */
+  color: #166534;
+}
+.vin-box span {
+  color: #EAB308;       /* visible on dark background */
+  font-weight: 600;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+  background:
+    radial-gradient(circle at top right, rgba(37,99,235,0.25), transparent 60%),
+    linear-gradient(to right, #020617, #1e293b);
+  color: white;
+  padding: 80px 60px;
+}
+
+.hero-text {
+  max-width: 720px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-sub {
+  color: #cbd5f5;
+  margin-bottom: 24px;
+}
+
+/* ================= SECTIONS ================= */
+
+.features,
+.search-section,
+.how-it-works {
+  width: 1100px;
+  margin: 60px auto;
+}
+
+/* ================= FEATURE CARDS ================= */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.feature-card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e5e7eb;
+  padding: 22px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #16a34a,
+    #f59e0b
+  );
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  color: #020617;
+}
+
+.feature-card p {
+  color: #475569;
+}
+
+
+/* ===== Feature card background colors ONLY ===== */
+
+/* VIN-Verified Access – Trust / Security */
+.features .feature-card:nth-child(1) {
+  background: linear-gradient(180deg, #eef2ff, #ffffff);
+}
+
+/* Region-Based Inventory – Network / Location */
+.features .feature-card:nth-child(2) {
+  background: linear-gradient(180deg, #f3e8ff, #ffffff);
+}
+
+/* Real-Time Availability – Live / Sync */
+.features .feature-card:nth-child(3) {
+  background: linear-gradient(180deg, #ecfdf5, #ffffff);
+}
+
+/* Direct Provider Fulfillment – Logistics */
+.features .feature-card:nth-child(4) {
+  background: linear-gradient(180deg, #fff7ed, #ffffff);
+}
+
+/* ================= HOW IT WORKS ================= */
+
+.how-it-works {
+  background:
+    linear-gradient(180deg, #f8fafc, #f1f5f9);
+  padding: 36px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.how-it-works h2 {
+  margin-top: 0;
+}
+
+.how-it-works ol {
+  padding-left: 20px;
+  font-size: 16px;
+  color: #334155;
+}
+
+.how-desc {
+  margin-bottom: 18px;
+  color: #475569;
+}
+
+/* ================= SEARCH ================= */
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+select,
+input {
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+  background: white;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+  padding: 12px 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+button.primary {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: white;
+}
+
+button.primary:hover {
+  background: linear-gradient(90deg, #1d4ed8, #1e40af);
+}
+
+.error {
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+
+/* ================= RESULTS ================= */
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e5e7eb;
+  padding: 18px;
+  border-radius: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h4 {
+  margin-top: 0;
+  color: #020617;
+}
+
+.card p {
+  color: #475569;
+}
+
+.card button {
+  margin-top: 12px;
+  width: 100%;
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  color: white;
+}
+
+.card button:hover {
+  background: linear-gradient(90deg, #15803d, #166534);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: linear-gradient(90deg, #020617, #1e293b);
+  color: #cbd5f5;
+  text-align: center;
+  padding: 24px;
+  margin-top: 80px;
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.6);
+}
+
+.modal-content {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  width: 360px;
+  margin: 150px auto;
+  padding: 24px;
+  border-radius: 14px;
+}
+
+.vin-info {
+  font-size: 14px;
+  color: #475569;
+}
+
+.vin-error {
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.modal-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+/* ================= BRAND NAME (ARTERA) ================= */
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    90deg,
+    #60a5fa,
+    #34d399
+  );
+
+  background-clip: text;          /* standard */
+  -webkit-background-clip: text;  /* webkit */
+
+  color: transparent;             /* standard */
+  -webkit-text-fill-color: transparent; /* webkit */
+}
+
+/* ================= ARTERA CHATBOT ================= */
+/* ================= ARTERA CHATBOT ================= */
+
+.artera-chat {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 2000;
+  font-family: Arial, sans-serif;
+}
+
+/* Toggle circle */
+.artera-chat .chat-toggle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.25),
+    0 0 0 rgba(37,99,235,0.5);
+
+  animation: pulse 2.8s infinite;
+  transition: transform 0.2s ease;
+}
+
+.artera-chat .chat-toggle:hover {
+  transform: scale(1.06);
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,99,235,0.45); }
+  70%  { box-shadow: 0 0 0 18px rgba(37,99,235,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+}
+
+/* ================= CHAT WINDOW ================= */
+/* ================= ARTERA CHATBOT ================= */
+
+.artera-chat {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 2000;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= TOGGLE ================= */
+
+.artera-chat .chat-toggle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.artera-chat .chat-toggle:hover {
+  transform: scale(1.06);
+}
+
+/* ================= CHAT WINDOW ================= */
+
+.artera-chat .chat-window {
+  width: 420px;
+  height: 560px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: chatOpen 0.25s ease;
+}
+
+@keyframes chatOpen {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ================= HEADER ================= */
+
+.artera-chat .chat-header {
+  background: linear-gradient(90deg, #020617, #1e293b);
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= MESSAGES CONTAINER ================= */
+
+.artera-chat .chat-messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  font-size: 14px;
+  background: transparent;
+
+  display: flex;              /* 🔥 REQUIRED */
+  flex-direction: column;     /* 🔥 REQUIRED */
+  gap: 12px;                  /* spacing between bubbles */
+  color: #e5e7eb;
+}
+
+/* ================= MESSAGE BUBBLES ================= */
+
+.msg {
+  max-width: 72%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  line-height: 1.45;
+  font-size: 14px;
+  display: inline-block;      /* 🔥 REQUIRED */
+  animation: fadeIn 0.25s ease;
+}
+
+/* USER BUBBLE (RIGHT) */
+.msg.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+}
+
+/* BOT BUBBLE (LEFT) */
+.msg.bot {
+  align-self: flex-start;
+  background: linear-gradient(180deg, #f8fafc, #e5e7eb);
+  color: #020617;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* ================= INVENTORY RESPONSE ================= */
+
+.inventory-response {
+  margin-top: 10px;
+}
+
+.inventory-response .title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #020617;
+}
+
+/* Inventory cards */
+.inventory-tile {
+  background: linear-gradient(180deg, #ecfdf5, #d1fae5);
+  border-left: 4px solid #22c55e;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.inventory-tile .provider {
+  font-weight: 600;
+  color: #064e3b;
+}
+
+.inventory-tile .qty {
+  font-weight: 700;
+  color: #166534;
+}
+
+/* ================= INPUT ================= */
+
+.artera-chat .chat-input {
+  display: flex;
+  border-top: 1px solid #1e293b;
+  background: #020617;
+}
+
+.artera-chat .chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e5e7eb;
+
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+
+.artera-chat .chat-input button {
+  padding: 0 18px;
+  border: none;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: white;
+  cursor: pointer;
+
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+
+  font-weight: 600;
+}
+
+.artera-chat .chat-input button:hover {
+  opacity: 0.95;
+}
+
+
+/* ================= STATES ================= */
+
+.artera-chat.minimized .chat-window {
+  display: none;
+}
+
+.artera-chat:not(.minimized) .chat-toggle {
+  display: none;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ================= TABS ================= */
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+/* 
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5f5;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+.nav-btn.active {
+  border-bottom: 2px solid #60a5fa;
+  color: #ffffff;
+} */
+
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #e5e7eb;          /* neutral light gray */
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+.nav-btn.active {
+  border-bottom: 2px solid #22c55e;  /* green accent */
+  color: #22c55e;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 120px;          /* 👈 key: larger, confident */
+  width: auto;
+  object-fit: contain;
+  padding-left: 30px;
+}
+
+.brand img {
+  transition: transform 0.2s ease;
+}
+
+.brand:hover img {
+  transform: scale(1.05);
+}
+
+
+/* ================= PARTS CATALOG ================= */
+
+.parts-catalog {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.parts-catalog h2 {
+  margin-bottom: 32px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #020617;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.product-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 240px;
+  min-height: 270px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+
+  text-decoration: none;
+  color: #020617;
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: #c7d2fe;
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.08),
+    0 4px 8px rgba(15, 23, 42, 0.04);
+}
+
+/* ================= STOCK BADGE ================= */
+
+.product-card::before {
+  content: "In stock";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  z-index: 2;
+}
+
+/* ================= IMAGE AREA ================= */
+
+.product-image {
+  height: 160px;
+  background: linear-gradient(
+    135deg,
+    #f8fafc,
+    #eef2f7
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.image-placeholder {
+  width: 70%;
+  height: 70%;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #e5e7eb,
+    #cbd5e1
+  );
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+.image-placeholder::after {
+  content: "Preview";
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748b;
+}
+/* ================= PRODUCT INFO ================= */
+
+.product-info {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+}
+
+.product-info h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #020617;
+}
+
+/* Generic description */
+.product-info .desc-text {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* Low stock emphasis */
+.product-info .low-stock {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b91c1c;
+}
+
+/* ================= CTA ================= */
+
+.view-link {
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.product-card:hover .view-link {
+  text-decoration: underline;
+}
+
+
+
+
+/* ================= QUICK VIEW MODAL ================= */
+
+#quick-view {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.quick-view-content {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  padding: 40px 44px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= BODY LAYOUT ================= */
+
+.quick-view-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+}
+
+/* ================= IMAGE SECTION ================= */
+
+.quick-view-image {
+  height: 360px;
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-view-image .image-placeholder {
+  width: 75%;
+  height: 75%;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    #e5e7eb,
+    #cbd5e1
+  );
+  position: relative;
+}
+
+.quick-view-image .image-placeholder::after {
+  content: "No image";
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ================= INFO SECTION ================= */
+
+.quick-view-info h2 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  line-height: 1.25;
+  color: #020617;
+}
+
+.quick-view-info label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.quick-view-info select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+/* ================= QUANTITY ================= */
+
+.qty-info {
+  margin: 16px 0 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ================= PRIMARY ACTION ================= */
+
+.quick-view-info .primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
